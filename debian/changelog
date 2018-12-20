@@ -3,6 +3,9 @@ ca-certificates (20181220) UNRELEASED; urgency=medium
   * debian/ca-certificates.postinst:
     Fix permissions on /usr/local/share/ca-certificates when using symlinks.
     Closes: #916833
+  * sbin/update-ca-certificates:
+    Remove orphaned symlinks found in /etc/ssl/certs, to prevent `openssl
+    rehash` from exiting with an error. Closes: #895482, #895473
   * mozilla/{certdata.txt,nssckbi.h}:
     Update Mozilla certificate authority bundle to version 2.28.
     The following certificate authorities were added (+):
