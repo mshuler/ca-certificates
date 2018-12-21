@@ -1,4 +1,4 @@
-ca-certificates (20181220) UNRELEASED; urgency=medium
+ca-certificates (20181220) unstable; urgency=medium
 
   * debian/ca-certificates.postinst:
     Fix permissions on /usr/local/share/ca-certificates when using symlinks.
@@ -20,7 +20,7 @@ ca-certificates (20181220) UNRELEASED; urgency=medium
     - "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı H5"
     - "Visa eCommerce Root"
 
- -- Michael Shuler <michael@pbandjelly.org>  Thu, 20 Dec 2018 09:48:02 -0600
+ -- Michael Shuler <michael@pbandjelly.org>  Thu, 20 Dec 2018 18:45:01 -0600
 
 ca-certificates (20180409) unstable; urgency=medium
 
