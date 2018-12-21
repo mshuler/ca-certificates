@@ -1,5 +1,7 @@
 ca-certificates (20181220) unstable; urgency=medium
 
+  * Set Standards-Version: 4.2.1
+    Removed trailing whitespace from d/changelog
   * debian/ca-certificates.postinst:
     Fix permissions on /usr/local/share/ca-certificates when using symlinks.
     Closes: #916833
@@ -1219,4 +1221,3 @@ ca-certificates (20020107) unstable; urgency=low
   * Initial Release. closes: Bug#126586
 
  -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon,  7 Jan 2002 21:16:51 +0900
-
