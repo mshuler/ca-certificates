@@ -1,7 +1,9 @@
-ca-certificates (20181220) unstable; urgency=medium
+ca-certificates (20181221) unstable; urgency=high
 
-  * Set Standards-Version: 4.2.1
-    Removed trailing whitespace from d/changelog
+  * debian/control:
+    Depend on openssl (>= 1.1.1).
+    Set Standards-Version: 4.2.1.
+    Remove trailing whitespace from d/changelog.
   * debian/ca-certificates.postinst:
     Fix permissions on /usr/local/share/ca-certificates when using symlinks.
     Closes: #916833
@@ -24,7 +26,7 @@ ca-certificates (20181220) unstable; urgency=medium
     - "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı H5"
     - "Visa eCommerce Root"
 
- -- Michael Shuler <michael@pbandjelly.org>  Thu, 20 Dec 2018 18:45:01 -0600
+ -- Michael Shuler <michael@pbandjelly.org>  Fri, 21 Dec 2018 10:34:25 -0600
 
 ca-certificates (20180409) unstable; urgency=medium
 
