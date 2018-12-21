@@ -172,11 +172,20 @@ REMOVED_CNT=$(wc -l < "$REMOVED")
 if [ "$ADDED_CNT" -gt 0 ] || [ "$REMOVED_CNT" -gt 0 ]
 then
   # only run if set of files has changed
+  # Remove orphan symlinks found in ETCCERTSDIR to prevent `openssl rehash`
+  # from exiting with an error. See #895482, #895473.
+  find $ETCCERTSDIR -type l ! -exec test -e {} \; -print | while read orphan
+  do
+    rm -f "$orphan"
+    if [ "$verbose" = 1 ]; then
+      echo "Removed orphan symlink $orphan"
+    fi
+  done
   if [ "$verbose" = 0 ]
   then
     openssl rehash . > /dev/null
   else
-    openssl rehash .
+    openssl rehash -v .
   fi
 fi
 
