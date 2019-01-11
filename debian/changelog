@@ -1,8 +1,9 @@
-ca-certificates (20181221) unstable; urgency=high
+ca-certificates (20190110) unstable; urgency=high
 
   * debian/control:
     Depend on openssl (>= 1.1.1).
-    Set Standards-Version: 4.2.1.
+    Set Standards-Version: 4.3.0.1.
+    Set Build-Depends: debhelper-compat (= 12); drop d/compat
     Remove trailing whitespace from d/changelog.
   * debian/ca-certificates.postinst:
     Fix permissions on /usr/local/share/ca-certificates when using symlinks.
@@ -26,7 +27,7 @@ ca-certificates (20181221) unstable; urgency=high
     - "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı H5"
     - "Visa eCommerce Root"
 
- -- Michael Shuler <michael@pbandjelly.org>  Fri, 21 Dec 2018 10:34:25 -0600
+ -- Michael Shuler <michael@pbandjelly.org>  Thu, 10 Jan 2019 19:31:31 -0600
 
 ca-certificates (20180409) unstable; urgency=medium
 
