@@ -1,4 +1,4 @@
-ca-certificates (20190110+1) UNRELEASED; urgency=medium
+ca-certificates (20190122) UNRELEASED; urgency=medium
 
   * mozilla/{certdata.txt,nssckbi.h}:
     Update Mozilla certificate authority bundle to version 2.30.
@@ -11,7 +11,7 @@ ca-certificates (20190110+1) UNRELEASED; urgency=medium
     + "UCA Extended Validation Root"
     + "UCA Global G2 Root"
 
- -- Michael Shuler <michael@pbandjelly.org>  Thu, 10 Jan 2019 21:30:29 -0600
+ -- Michael Shuler <michael@pbandjelly.org>  Tue, 22 Jan 2019 20:03:52 -0600
 
 ca-certificates (20190110) unstable; urgency=high
 
