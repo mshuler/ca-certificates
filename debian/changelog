@@ -1,17 +1,27 @@
-ca-certificates (20190122) UNRELEASED; urgency=medium
+ca-certificates (20200118) UNRELEASED; urgency=medium
 
   * mozilla/{certdata.txt,nssckbi.h}:
-    Update Mozilla certificate authority bundle to version 2.30.
+    Update Mozilla certificate authority bundle to version 2.40.
     The following certificate authorities were added (+):
     + "Certigna Root CA"
+    + "emSign ECC Root CA - C3"
+    + "emSign ECC Root CA - G3"
+    + "emSign Root CA - C1"
+    + "emSign Root CA - G1"
+    + "Entrust Root Certification Authority - G4"
     + "GTS Root R1"
     + "GTS Root R2"
     + "GTS Root R3"
     + "GTS Root R4"
+    + "Hongkong Post Root CA 3"
     + "UCA Extended Validation Root"
     + "UCA Global G2 Root"
+    The following certificate authorities were removed (-):
+    - "Certinomis - Root CA"
+    - "Certplus Class 2 Primary CA"
+    - "Deutsche Telekom Root CA 2"
 
- -- Michael Shuler <michael@pbandjelly.org>  Tue, 22 Jan 2019 20:03:52 -0600
+ -- Michael Shuler <michael@pbandjelly.org>  Sat, 18 Jan 2020 09:38:06 -0600
 
 ca-certificates (20190110) unstable; urgency=high
 
