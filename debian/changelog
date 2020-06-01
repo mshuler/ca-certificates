@@ -1,8 +1,10 @@
-ca-certificates (20200601~deb10u1) buster; urgency=medium
+ca-certificates (20200601~deb10u1) buster-security; urgency=medium
 
-  * Rebuild for buster.
+  * Rebuild for buster-security.
   * Merge changes from 20200601
     - d/control; set d/gbp.conf branch to debian-buster
+  * This security release updates the Mozilla CA bundle and blacklists
+    distrusted Symantec roots and the expired AddTrust External Root.
 
  -- Michael Shuler <michael@pbandjelly.org>  Mon, 01 Jun 2020 15:21:01 -0500
 
