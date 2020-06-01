@@ -1,7 +1,8 @@
 ca-certificates (20200601) unstable; urgency=medium
 
   * debian/control:
-    Set Standards-Version: 4.5.0
+    Set Standards-Version: 4.5.0.2
+    Set Build-Depends: debhelper-compat (= 13)
   * debian/copyright:
     Replace tabs in license text
   * mozilla/{certdata.txt,nssckbi.h}:
