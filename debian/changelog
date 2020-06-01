@@ -1,3 +1,11 @@
+ca-certificates (20200601~deb10u1) buster; urgency=medium
+
+  * Rebuild for buster.
+  * Merge changes from 20200601
+    - d/control; set d/gbp.conf branch to debian-buster
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 01 Jun 2020 15:21:01 -0500
+
 ca-certificates (20200601) unstable; urgency=medium
 
   * debian/control:
