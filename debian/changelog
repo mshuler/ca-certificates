@@ -1,8 +1,74 @@
-ca-certificates (20161130+nmu1+deb9u2) stretch; urgency=high
+ca-certificates (20200601~deb9u1) stretch; urgency=medium
 
+  * Rebuild for stretch.
+  * Merge changes from 20200601
+    - d/control
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 01 Jun 2020 15:57:31 -0500
+
+ca-certificates (20200601) unstable; urgency=medium
+
+  * debian/control:
+    Set Standards-Version: 4.5.0.2
+    Set Build-Depends: debhelper-compat (= 13)
+  * debian/copyright:
+    Replace tabs in license text
+  * mozilla/{certdata.txt,nssckbi.h}:
+    Update Mozilla certificate authority bundle to version 2.40.
+    Closes: #956411, #955038
+  * mozilla/blacklist.txt
+    Add distrusted Symantec CA list to blacklist for explicit removal.
+    Closes: #911289
+    Blacklist expired root certificate, "AddTrust External Root"
+    Closes: #961907
+    The following certificate authorities were added (+):
+    + "Certigna Root CA"
+    + "emSign ECC Root CA - C3"
+    + "emSign ECC Root CA - G3"
+    + "emSign Root CA - C1"
+    + "emSign Root CA - G1"
+    + "Entrust Root Certification Authority - G4"
+    + "GTS Root R1"
+    + "GTS Root R2"
+    + "GTS Root R3"
+    + "GTS Root R4"
+    + "Hongkong Post Root CA 3"
+    + "UCA Extended Validation Root"
+    + "UCA Global G2 Root"
+    The following certificate authorities were removed (-):
+    - "AddTrust External Root"
+    - "Certinomis - Root CA"
+    - "Certplus Class 2 Primary CA"
+    - "Deutsche Telekom Root CA 2"
+    - "GeoTrust Global CA"
+    - "GeoTrust Primary Certification Authority"
+    - "GeoTrust Primary Certification Authority - G2"
+    - "GeoTrust Primary Certification Authority - G3"
+    - "GeoTrust Universal CA"
+    - "thawte Primary Root CA"
+    - "thawte Primary Root CA - G2"
+    - "thawte Primary Root CA - G3"
+    - "VeriSign Class 3 Public Primary Certification Authority - G4"
+    - "VeriSign Class 3 Public Primary Certification Authority - G5"
+    - "VeriSign Universal Root Certification Authority"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 01 Jun 2020 11:45:49 -0500
+
+ca-certificates (20190110) unstable; urgency=high
+
+  * debian/control:
+    Depend on openssl (>= 1.1.1).
+    Set Standards-Version: 4.3.0.1.
+    Set Build-Depends: debhelper-compat (= 12); drop d/compat
+    Remove trailing whitespace from d/changelog.
   * debian/ca-certificates.postinst:
     Fix permissions on /usr/local/share/ca-certificates when using symlinks.
     Closes: #916833
+  * sbin/update-ca-certificates:
+    Remove orphan symlinks found in /etc/ssl/certs to prevent `openssl
+    rehash` from exiting with an error. Closes: #895482, #895473
+    This will also fix removal of user CA certificates from /usr/local without
+    needing to run --fresh. Closes: #911303
   * mozilla/{certdata.txt,nssckbi.h}:
     Update Mozilla certificate authority bundle to version 2.28.
     The following certificate authorities were added (+):
@@ -19,14 +85,71 @@ ca-certificates (20161130+nmu1+deb9u2) stretch; urgency=high
 
  -- Michael Shuler <michael@pbandjelly.org>  Thu, 10 Jan 2019 19:31:31 -0600
 
-ca-certificates (20161130+nmu1+deb9u1) stretch; urgency=medium
+ca-certificates (20180409) unstable; urgency=medium
 
-  * debian/ca-certificates.postinst:
-    Prevent postinst failure on read-only /usr/local. Closes: #843722
-  * debian/control:
-    Remove Christian Perrier from uploaders at his request. Closes: #894070
+  [ Michael Shuler ]
   * mozilla/{certdata.txt,nssckbi.h}:
     Update Mozilla certificate authority bundle to version 2.22.
+    The following certificate authorities were added (+):
+    + "GDCA TrustAUTH R5 ROOT"
+    + "SSL.com EV Root Certification Authority ECC"
+    + "SSL.com EV Root Certification Authority RSA R2"
+    + "SSL.com Root Certification Authority ECC"
+    + "SSL.com Root Certification Authority RSA"
+    + "TrustCor ECA-1"
+    + "TrustCor RootCert CA-1"
+    + "TrustCor RootCert CA-2"
+    The following certificate authorities were removed (-):
+    - "ACEDICOM Root"
+    - "AddTrust Low-Value Services Root"
+    - "AddTrust Public Services Root"
+    - "AddTrust Qualified Certificates Root"
+    - "CA Disig Root R1"
+    - "CNNIC ROOT"
+    - "Camerfirma Chambers of Commerce Root"
+    - "Camerfirma Global Chambersign Root"
+    - "Certinomis - Autorité Racine"
+    - "Certum Root CA"
+    - "China Internet Network Information Center EV Certificates Root"
+    - "Comodo Secure Services root"
+    - "Comodo Trusted Services root"
+    - "DST ACES CA X6"
+    - "GeoTrust Global CA 2"
+    - "PSCProcert"
+    - "Security Communication EV RootCA1"
+    - "Swisscom Root CA 1"
+    - "Swisscom Root CA 2"
+    - "Swisscom Root EV CA 2"
+    - "TURKTRUST Certificate Services Provider Root 2007"
+    - "TUBITAK UEKAE Kok Sertifika Hizmet Saglayicisi - Surum 3"
+    - "UTN USERFirst Hardware Root CA"
+  * mozilla/blacklist.txt
+    Update blacklist to remove certificates no longer in certdata.txt and
+    explicitly ignore distrusted certificates.
+  * debian/copyright:
+    Fix lintian insecure-copyright-format-uri with https URL.
+  * debian/changelog:
+    Fix lintian file-contains-trailing-whitespace.
+  * debian/{compat,control}:
+    Set to debhelper compat 11.
+  * Update openssl dependency to >= 1.1.0 to support `openssl rehash` and drop
+    usage of `c_rehash` script. Closes: #895075
+
+  [ Thijs Kinkhorst ]
+  * Remove Christian Perrier from uploaders at his request (closes: #894070).
+  * Checked for policy 4.1.4, no changes.
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 09 Apr 2018 18:43:49 -0500
+
+ca-certificates (20170717) unstable; urgency=medium
+
+  * Update to Standards-Version: 4.0.1
+  * debian/ca-certificates.postinst:
+    Prevent postinst failure on read-only /usr/local. Closes: #843722
+  * mozilla/certdata2pem.py:
+    Remove email-only roots from mozilla trust store. Closes: #721976
+  * mozilla/{certdata.txt,nssckbi.h}:
+    Update Mozilla certificate authority bundle to version 2.14.
     Closes: #858064
     The following certificate authorities were added (+):
     + "AC RAIZ FNMT-RCM"
@@ -35,58 +158,36 @@ ca-certificates (20161130+nmu1+deb9u1) stretch; urgency=medium
     + "Amazon Root CA 3"
     + "Amazon Root CA 4"
     + "D-TRUST Root CA 3 2013"
-    + "GDCA TrustAUTH R5 ROOT"
     + "LuxTrust Global Root 2"
-    + "SSL.com EV Root Certification Authority ECC"
-    + "SSL.com EV Root Certification Authority RSA R2"
-    + "SSL.com Root Certification Authority ECC"
-    + "SSL.com Root Certification Authority RSA"
-    + "Symantec Class 1 Public Primary Certification Authority - G4"
-    + "Symantec Class 1 Public Primary Certification Authority - G6"
-    + "Symantec Class 2 Public Primary Certification Authority - G4"
-    + "Symantec Class 2 Public Primary Certification Authority - G6"
-    + "TrustCor ECA-1"
-    + "TrustCor RootCert CA-1"
-    + "TrustCor RootCert CA-2"
     + "TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1"
     The following certificate authorities were removed (-):
-    - "ACEDICOM Root"
-    - "AddTrust Public Services Root"
-    - "AddTrust Qualified Certificates Root"
+    - "AC Raiz Certicamara S.A."
     - "ApplicationCA - Japanese Government"
     - "Buypass Class 2 CA 1"
-    - "CA Disig Root R1"
-    - "Certinomis - Autorité Racine"
-    - "China Internet Network Information Center EV Certificates Root"
-    - "CNNIC ROOT"
-    - "Comodo Secure Services root"
-    - "Comodo Trusted Services root"
-    - "DST ACES CA X6"
+    - "ComSign CA"
     - "EBG Elektronik Sertifika Hizmet Saglayicisi"
     - "Equifax Secure CA"
     - "Equifax Secure eBusiness CA 1"
     - "Equifax Secure Global eBusiness CA"
-    - "GeoTrust Global CA 2"
     - "IGC/A"
     - "Juur-SK"
     - "Microsec e-Szigno Root CA"
-    - "PSCProcert"
     - "Root CA Generalitat Valenciana"
     - "RSA Security 2048 v3"
-    - "Security Communication EV RootCA1"
     - "S-TRUST Authentication and Encryption Root CA 2005 PN"
-    - "Swisscom Root CA 1"
-    - "Swisscom Root EV CA 2"
-    - "TUBITAK UEKAE Kok Sertifika Hizmet Saglayicisi - Surum 3"
-    - "TURKTRUST Certificate Services Provider Root 2007"
+    - "S-TRUST Universal Root CA"
+    - "SwissSign Platinum CA - G2"
+    - "TC TrustCenter Class 3 CA II"
     - "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı H6"
-    - "UTN USERFirst Hardware Root CA"
+    - "UTN USERFirst Email Root CA"
     - "Verisign Class 1 Public Primary Certification Authority"
+    - "Verisign Class 1 Public Primary Certification Authority - G3"
     - "Verisign Class 2 Public Primary Certification Authority - G2"
+    - "Verisign Class 2 Public Primary Certification Authority - G3"
     - "Verisign Class 3 Public Primary Certification Authority"
     - "WellsSecure Public Root Certificate Authority"
 
- -- Michael Shuler <michael@pbandjelly.org>  Sat, 07 Jul 2018 01:08:40 +0200
+ -- Michael Shuler <michael@pbandjelly.org>  Thu, 20 Jul 2017 00:18:08 -0500
 
 ca-certificates (20161130+nmu1) unstable; urgency=medium
 
@@ -380,7 +481,7 @@ ca-certificates (20130610) unstable; urgency=low
   * Update to machine-readable debian/copyright file v1.0
 
   [ Thijs Kinkhorst ]
-  * Drop upgrading code for upgrades from Debian Etch and earlier. 
+  * Drop upgrading code for upgrades from Debian Etch and earlier.
   * Remove obsolete debconf.org CA certificate. DebConf now uses an
     intermediate certificate signed by SPI. (Closes: #693405)
   * Remove obsolete SPI CA certiticate.
@@ -957,7 +1058,7 @@ ca-certificates (20061027) unstable; urgency=low
     closes: Bug#386806
   * debian/po/da.po: updated
     closes: Bug#388018
-    
+
  -- Fumitoshi UKAI <ukai@debian.or.jp>  Sat, 28 Oct 2006 02:28:50 +0900
 
 ca-certificates (20060816) unstable; urgency=low
@@ -1004,18 +1105,18 @@ ca-certificates (20050518) unstable; urgency=high
     closes: Bug#296212
   * update mozilla/certdata.txt
     add: "Certum Root CA", "Comodo AAA Services root"
-         "Comodo Secure Services root", 
-	 "Comodo Trusted Services root",
-	 "IPS Chained CAs root", "IPS CLASE1 root", "IPS CLASE3 root",
-	 "IPS CLASEA1 root", "IPS CLASEA3 root", "IPS Servidores root"
-	 "IPS Timestamping root",
-	 "QuoVadis Root CA",
-	 "Security Communication Root CA",
-	 "Sonera Class 1 Root CA", "Sonera Class 2 Root CA",
-	 "Staat der Nederlanden Root CA",
-	 "TDC Internet Root CA", "TDC OCES Root CA", 
-	 "UTN DATACorp SGC Root CA", "UTN USERFirst Email Root CA",
-	 "UTN USERFirst Hardware Root CA", "UTN USERFirst Object Root CA"
+         "Comodo Secure Services root",
+         "Comodo Trusted Services root",
+         "IPS Chained CAs root", "IPS CLASE1 root", "IPS CLASE3 root",
+         "IPS CLASEA1 root", "IPS CLASEA3 root", "IPS Servidores root"
+         "IPS Timestamping root",
+         "QuoVadis Root CA",
+         "Security Communication Root CA",
+         "Sonera Class 1 Root CA", "Sonera Class 2 Root CA",
+         "Staat der Nederlanden Root CA",
+         "TDC Internet Root CA", "TDC OCES Root CA",
+         "UTN DATACorp SGC Root CA", "UTN USERFirst Email Root CA",
+         "UTN USERFirst Hardware Root CA", "UTN USERFirst Object Root CA"
   * add CACert.org's Root CA
     closes: Bug#213086, Bug#288293
   * add debian/po/vi.po
@@ -1024,13 +1125,13 @@ ca-certificates (20050518) unstable; urgency=high
     closes: Bug#309019
   * write "How certificate will be accepted in ca-certificates package"
     in README.Debain
-    
+
  -- Fumitoshi UKAI <ukai@debian.or.jp>  Wed, 18 May 2005 00:40:54 +0900
 
 ca-certificates (20040809) unstable; urgency=low
 
   * previous version was not fixed Bug#255933 correctly.
-    update-ca-certificates now remove symlinks of deselected entries 
+    update-ca-certificates now remove symlinks of deselected entries
     in ca-certificates.conf
     closes: Bug#255933
 
@@ -1040,7 +1141,7 @@ ca-certificates (20040808) unstable; urgency=low
 
   * run update-ca-certificates by /bin/sh -e
     closes: Bug#247581
-  * update-ca-certificates remove symlinks of deselected entries 
+  * update-ca-certificates remove symlinks of deselected entries
     in ca-certificates.conf
     closes: Bug#255933
   * change default of trust_new_crts from 'ask' to 'yes'
@@ -1128,17 +1229,17 @@ ca-certificates (20030415) unstable; urgency=medium
  -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon, 14 Apr 2003 23:00:58 +0900
 
 ca-certificates (20030414) unstable; urgency=medium
-    
+
   * certificates are installed in /usr/share/ca-certificates
     you can find md5sum of certs files. closes: Bug#170777
-  
+
   * debconf to generate /etc/ca-certificates.conf
-  * update-ca-certificates update /etc/ssl/certs according 
+  * update-ca-certificates update /etc/ssl/certs according
     /etc/ca-certificates.conf
     It also generate /etc/ssl/certs/ca-certificates.crt
     which is single-file version of certs.
     closes: Bug#158904
-  
+
   * change extension from .pem to .crt in /usr/share/ca-certificates
     - /etc/mime.types:
       application/x-x509-ca-cert crt
@@ -1147,7 +1248,7 @@ ca-certificates (20030414) unstable; urgency=medium
     c_rehash requires .pem extension
 
   * Update certificate from mozilla 2:1.3-4
-    mozilla/security/nss/lib/ckfw/builtins/certdata.txt 
+    mozilla/security/nss/lib/ckfw/builtins/certdata.txt
     cefd05b299ea683fc6b1ce9ff1e23a3f  mozilla/certdata.txt
 
   * Add spi-inc.org/spi-ca.crt from http://www.spi-inc.org/secretary/
@@ -1181,4 +1282,3 @@ ca-certificates (20020107) unstable; urgency=low
   * Initial Release. closes: Bug#126586
 
  -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon,  7 Jan 2002 21:16:51 +0900
-
