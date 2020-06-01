@@ -8,8 +8,11 @@ ca-certificates (20200601) unstable; urgency=medium
   * mozilla/{certdata.txt,nssckbi.h}:
     Update Mozilla certificate authority bundle to version 2.40.
     Closes: #956411, #955038
-  * Add distrusted Symantec CA list to blacklist for explicit removal.
+  * mozilla/blacklist.txt
+    Add distrusted Symantec CA list to blacklist for explicit removal.
     Closes: #911289
+    Blacklist expired root certificate, "AddTrust External CA Root"
+    Closes: #961907
     The following certificate authorities were added (+):
     + "Certigna Root CA"
     + "emSign ECC Root CA - C3"
@@ -25,6 +28,7 @@ ca-certificates (20200601) unstable; urgency=medium
     + "UCA Extended Validation Root"
     + "UCA Global G2 Root"
     The following certificate authorities were removed (-):
+    - "AddTrust External CA Root"
     - "Certinomis - Root CA"
     - "Certplus Class 2 Primary CA"
     - "Deutsche Telekom Root CA 2"
