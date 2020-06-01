@@ -36,4 +36,4 @@
 
 # Blacklist expired certificate (Not After : May 30 10:48:38 2020 GMT)
 # See: https://bugs.debian.org/961907
-"AddTrust External CA Root"
+"AddTrust External Root"
