@@ -1,5 +1,9 @@
 ca-certificates (20200601) unstable; urgency=medium
 
+  * debian/control:
+    Set Standards-Version: 4.5.0
+  * debian/copyright:
+    Replace tabs in license text
   * mozilla/{certdata.txt,nssckbi.h}:
     Update Mozilla certificate authority bundle to version 2.40.
     Closes: #956411, #955038
