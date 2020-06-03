@@ -1,3 +1,10 @@
+ca-certificates (20200602) UNRELEASED; urgency=medium
+
+  * debian/{rules,control}:
+    - grab Ubuntu patch from Matthias Klose to use Python3 during build (Closes: #942915)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 03 Jun 2020 13:21:32 +0200
+
 ca-certificates (20200601) unstable; urgency=medium
 
   * debian/control:
