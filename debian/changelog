@@ -1,12 +1,13 @@
-ca-certificates (20200601~deb9u1) stretch-security; urgency=medium
+ca-certificates (20200601~deb9u1) stretch; urgency=medium
 
-  * Rebuild for stretch-security.
+  * Rebuild for stretch.
   * Merge changes from 20200601
     - d/control
-  * This security release updates the Mozilla CA bundle and blacklists
-    distrusted Symantec roots and the expired AddTrust External Root.
+  * This release updates the Mozilla CA bundle to 2.40, blacklists
+    distrusted Symantec roots, and blacklists expired "AddTrust External
+    Root". Closes: #956411, #955038, #911289, #961907
 
- -- Michael Shuler <michael@pbandjelly.org>  Mon, 01 Jun 2020 15:57:31 -0500
+ -- Michael Shuler <michael@pbandjelly.org>  Wed, 03 Jun 2020 13:13:21 -0500
 
 ca-certificates (20200601) unstable; urgency=medium
 
