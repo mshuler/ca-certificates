@@ -1,3 +1,9 @@
+ca-certificates (20210120) UNRELEASED; urgency=low
+
+  * Fix day-of-week for changelog entry 20090624.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Thu, 11 Jun 2020 14:29:08 -0000
+
 ca-certificates (20210119) unstable; urgency=medium
 
   [ Julien Cristau ]
@@ -903,7 +909,7 @@ ca-certificates (20090624) unstable; urgency=low
     hooks will be empty, though.  Failure exit codes of hooks will not
     tear down the upgrade process anymore.  They are printed but ignored.
 
- -- Philipp Kern <pkern@debian.org>  Tue, 24 Jun 2009 21:04:08 +0200
+ -- Philipp Kern <pkern@debian.org>  Wed, 24 Jun 2009 21:04:08 +0200
 
 ca-certificates (20081127) unstable; urgency=low
 
