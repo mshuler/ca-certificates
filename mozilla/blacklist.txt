@@ -11,29 +11,6 @@
 "TURKTRUST Mis-issued Intermediate CA 1"
 "TURKTRUST Mis-issued Intermediate CA 2"
 
-# Distrusted Symantec Root CAs:
-"GeoTrust Global CA"
-"GeoTrust Primary Certification Authority"
-"GeoTrust Primary Certification Authority - G2"
-"GeoTrust Primary Certification Authority - G3"
-"GeoTrust Universal CA"
-"Thawte Premium Server CA"
-"thawte Primary Root CA"
-"thawte Primary Root CA - G2"
-"thawte Primary Root CA - G3"
-"Symantec Class 1 Public Primary Certification Authority - G4"
-"Symantec Class 1 Public Primary Certification Authority - G6"
-"Symantec Class 2 Public Primary Certification Authority - G4"
-"Symantec Class 2 Public Primary Certification Authority - G6"
-"Symantec Class 3 Public Primary Certification Authority - G4"
-"Symantec Class 3 Public Primary Certification Authority - G6"
-"VeriSign Class 1 Public Primary Certification Authority - G3"
-"VeriSign Class 2 Public Primary Certification Authority - G3"
-"VeriSign Class 3 Public Primary Certification Authority - G3"
-"VeriSign Class 3 Public Primary Certification Authority - G4"
-"VeriSign Class 3 Public Primary Certification Authority - G5"
-"VeriSign Universal Root Certification Authority"
-
 # Blacklist expired certificate (Not After : May 30 10:48:38 2020 GMT)
 # See: https://bugs.debian.org/961907
 "AddTrust External Root"
