@@ -1,16 +1,33 @@
-ca-certificates (20200601~deb9u1) stretch; urgency=medium
+ca-certificates (20200611~deb9u1) stretch; urgency=medium
 
   * Rebuild for stretch.
-  * Merge changes from 20200601
-    - d/control
-  * This release updates the Mozilla CA bundle to 2.40, blacklists
-    distrusted Symantec roots, and blacklists expired "AddTrust External
-    Root". Closes: #956411, #955038, #911289, #961907
-  * Fix permissions on /usr/local/share/ca-certificates when using symlinks.
-    Closes: #916833
-  * Remove email-only roots from mozilla trust store. Closes: #721976
+  * This oldstable release Closes: #962596, #942915
 
- -- Michael Shuler <michael@pbandjelly.org>  Fri, 05 Jun 2020 11:52:50 -0500
+ -- Michael Shuler <michael@pbandjelly.org>  Thu, 11 Jun 2020 09:11:56 -0500
+
+ca-certificates (20200611) unstable; urgency=medium
+
+  * mozilla/blacklist:
+    Revert Symantec CA blacklist (#911289). Closes: #962596
+    The following root certificates were added back (+):
+    + "GeoTrust Global CA"
+    + "GeoTrust Primary Certification Authority"
+    + "GeoTrust Primary Certification Authority - G2"
+    + "GeoTrust Primary Certification Authority - G3"
+    + "GeoTrust Universal CA"
+    + "thawte Primary Root CA"
+    + "thawte Primary Root CA - G2"
+    + "thawte Primary Root CA - G3"
+    + "VeriSign Class 3 Public Primary Certification Authority - G4"
+    + "VeriSign Class 3 Public Primary Certification Authority - G5"
+    + "VeriSign Universal Root Certification Authority"
+
+  [ Gianfranco Costamagna ]
+  * debian/{rules,control}:
+    Merge Ubuntu patch from Matthias Klose to use Python3 during build.
+    Closes: #942915
+
+ -- Michael Shuler <michael@pbandjelly.org>  Thu, 11 Jun 2020 08:38:00 -0500
 
 ca-certificates (20200601) unstable; urgency=medium
 

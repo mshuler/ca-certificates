@@ -3,9 +3,9 @@ Section: misc
 Priority: optional
 Maintainer: Michael Shuler <michael@pbandjelly.org>
 Uploaders: Raphael Geissert <geissert@debian.org>,
-           Thijs Kinkhorst <thijs@debian.org>,
+           Thijs Kinkhorst <thijs@debian.org>
 Build-Depends: debhelper (>= 10), po-debconf
-Build-Depends-Indep: python, openssl
+Build-Depends-Indep: python3, openssl
 Standards-Version: 3.9.8
 Vcs-Git: https://salsa.debian.org/debian/ca-certificates.git
 Vcs-Browser: https://salsa.debian.org/debian/ca-certificates
