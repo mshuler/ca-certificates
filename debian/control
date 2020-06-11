@@ -5,7 +5,7 @@ Maintainer: Michael Shuler <michael@pbandjelly.org>
 Uploaders: Raphael Geissert <geissert@debian.org>,
            Thijs Kinkhorst <thijs@debian.org>
 Build-Depends: debhelper-compat (= 12), po-debconf
-Build-Depends-Indep: python, openssl
+Build-Depends-Indep: python3, openssl
 Standards-Version: 4.3.0.1
 Vcs-Git: https://salsa.debian.org/debian/ca-certificates.git
 Vcs-Browser: https://salsa.debian.org/debian/ca-certificates

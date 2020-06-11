@@ -1,13 +1,33 @@
-ca-certificates (20200601~deb10u1) buster; urgency=medium
+ca-certificates (20200611~deb10u1) buster; urgency=medium
 
   * Rebuild for buster.
-  * Merge changes from 20200601
-    - d/control; set d/gbp.conf branch to debian-buster
-  * This release updates the Mozilla CA bundle to 2.40, blacklists
-    distrusted Symantec roots, and blacklists expired "AddTrust External
-    Root". Closes: #956411, #955038, #911289, #961907
+  * This stable release Closes: #962596, #942915
 
- -- Michael Shuler <michael@pbandjelly.org>  Wed, 03 Jun 2020 13:09:34 -0500
+ -- Michael Shuler <michael@pbandjelly.org>  Thu, 11 Jun 2020 09:07:27 -0500
+
+ca-certificates (20200611) unstable; urgency=medium
+
+  * mozilla/blacklist:
+    Revert Symantec CA blacklist (#911289). Closes: #962596
+    The following root certificates were added back (+):
+    + "GeoTrust Global CA"
+    + "GeoTrust Primary Certification Authority"
+    + "GeoTrust Primary Certification Authority - G2"
+    + "GeoTrust Primary Certification Authority - G3"
+    + "GeoTrust Universal CA"
+    + "thawte Primary Root CA"
+    + "thawte Primary Root CA - G2"
+    + "thawte Primary Root CA - G3"
+    + "VeriSign Class 3 Public Primary Certification Authority - G4"
+    + "VeriSign Class 3 Public Primary Certification Authority - G5"
+    + "VeriSign Universal Root Certification Authority"
+
+  [ Gianfranco Costamagna ]
+  * debian/{rules,control}:
+    Merge Ubuntu patch from Matthias Klose to use Python3 during build.
+    Closes: #942915
+
+ -- Michael Shuler <michael@pbandjelly.org>  Thu, 11 Jun 2020 08:38:00 -0500
 
 ca-certificates (20200601) unstable; urgency=medium
 
