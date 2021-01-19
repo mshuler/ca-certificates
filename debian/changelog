@@ -1,5 +1,9 @@
-ca-certificates (20200611) unstable; urgency=medium
+ca-certificates (20200611) UNRELEASED; urgency=medium
 
+  [ Julien Cristau ]
+  * New maintainer (closes: #976406)
+
+  [ Michael Shuler ]
   * mozilla/blacklist:
     Revert Symantec CA blacklist (#911289). Closes: #962596
     The following root certificates were added back (+):
