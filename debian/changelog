@@ -1,22 +1,32 @@
-ca-certificates (20200611) UNRELEASED; urgency=medium
+ca-certificates (20210119) UNRELEASED; urgency=medium
 
   [ Julien Cristau ]
   * New maintainer (closes: #976406)
+  * mozilla/{certdata.txt,nssckbi.h}: Update Mozilla certificate authority
+    bundle to version 2.46.
+    The following certificate authorities were added (+):
+    + "certSIGN ROOT CA G2"
+    + "e-Szigno Root CA 2017"
+    + "Microsoft ECC Root Certificate Authority 2017"
+    + "Microsoft RSA Root Certificate Authority 2017"
+    + "NAVER Global Root Certification Authority"
+    + "Trustwave Global Certification Authority"
+    + "Trustwave Global ECC P256 Certification Authority"
+    + "Trustwave Global ECC P384 Certification Authority"
+    The following certificate authorities were removed (-):
+    - "EE Certification Centre Root CA"
+    - "GeoTrust Universal CA 2"
+    - "LuxTrust Global Root 2"
+    - "OISTE WISeKey Global Root GA CA"
+    - "Staat der Nederlanden Root CA - G2" (closes: #962079)
+    - "Taiwan GRCA"
+    - "Verisign Class 3 Public Primary Certification Authority - G3"
 
   [ Michael Shuler ]
   * mozilla/blacklist:
     Revert Symantec CA blacklist (#911289). Closes: #962596
     The following root certificates were added back (+):
-    + "GeoTrust Global CA"
-    + "GeoTrust Primary Certification Authority"
     + "GeoTrust Primary Certification Authority - G2"
-    + "GeoTrust Primary Certification Authority - G3"
-    + "GeoTrust Universal CA"
-    + "thawte Primary Root CA"
-    + "thawte Primary Root CA - G2"
-    + "thawte Primary Root CA - G3"
-    + "VeriSign Class 3 Public Primary Certification Authority - G4"
-    + "VeriSign Class 3 Public Primary Certification Authority - G5"
     + "VeriSign Universal Root Certification Authority"
 
   [ Gianfranco Costamagna ]
