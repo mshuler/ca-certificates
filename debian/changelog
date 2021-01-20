@@ -6,6 +6,9 @@ ca-certificates (20210120) UNRELEASED; urgency=low
   [ Julien Cristau ]
   * Create temporary ca-certificates.crt on the same file system.
     Closes: #923784
+  * Don't remove ca-certificates.crt before updating it, so it doesn't
+    go missing for a short while (closes: #920348).  Thanks, Dimitris
+    Aragiorgis!
 
  -- Debian Janitor <janitor@jelmer.uk>  Thu, 11 Jun 2020 14:29:08 -0000
 

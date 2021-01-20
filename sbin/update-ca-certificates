@@ -164,8 +164,6 @@ then
   done
 fi
 
-rm -f "$CERTBUNDLE"
-
 ADDED_CNT=$(wc -l < "$ADDED")
 REMOVED_CNT=$(wc -l < "$REMOVED")
 
