@@ -80,7 +80,7 @@ trap cleanup 0
 
 # Helper files.  (Some of them are not simple arrays because we spawn
 # subshells later on.)
-TEMPBUNDLE="$(mktemp -t "${CERTBUNDLE}.tmp.XXXXXX")"
+TEMPBUNDLE="${ETCCERTSDIR}/${CERTBUNDLE}.new"
 ADDED="$(mktemp -t "ca-certificates.tmp.XXXXXX")"
 REMOVED="$(mktemp -t "ca-certificates.tmp.XXXXXX")"
 

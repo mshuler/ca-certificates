@@ -1,6 +1,11 @@
 ca-certificates (20210120) UNRELEASED; urgency=low
 
+  [ Debian Janitor ]
   * Fix day-of-week for changelog entry 20090624.
+
+  [ Julien Cristau ]
+  * Create temporary ca-certificates.crt on the same file system.
+    Closes: #923784
 
  -- Debian Janitor <janitor@jelmer.uk>  Thu, 11 Jun 2020 14:29:08 -0000
 
