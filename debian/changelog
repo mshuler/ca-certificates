@@ -9,6 +9,7 @@ ca-certificates (20210120) UNRELEASED; urgency=low
   * Don't remove ca-certificates.crt before updating it, so it doesn't
     go missing for a short while (closes: #920348).  Thanks, Dimitris
     Aragiorgis!
+  * Bump package priority from optional to standard.
 
  -- Debian Janitor <janitor@jelmer.uk>  Thu, 11 Jun 2020 14:29:08 -0000
 

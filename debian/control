@@ -9,6 +9,7 @@ Vcs-Git: https://salsa.debian.org/debian/ca-certificates.git
 Vcs-Browser: https://salsa.debian.org/debian/ca-certificates
 
 Package: ca-certificates
+Priority: standard
 Architecture: all
 Depends: openssl (>= 1.1.1), ${misc:Depends}
 Enhances: openssl
