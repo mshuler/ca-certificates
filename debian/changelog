@@ -1,7 +1,11 @@
-ca-certificates (20200601~deb10u2) UNRELEASED; urgency=medium
+ca-certificates (20200601~deb10u2) buster; urgency=medium
 
+  [ Julien Cristau ]
+  * New maintainer (see #976406)
+
+  [ Michael Shuler ]
   * mozilla/blacklist:
-    Revert Symantec CA blacklist (#911289). Closes: #962596
+    Revert Symantec CA blacklist (#911289). Closes: #962596, #968002.
     The following root certificates were added back (+):
     + "GeoTrust Global CA"
     + "GeoTrust Primary Certification Authority"
@@ -15,7 +19,11 @@ ca-certificates (20200601~deb10u2) UNRELEASED; urgency=medium
     + "VeriSign Class 3 Public Primary Certification Authority - G5"
     + "VeriSign Universal Root Certification Authority"
 
- -- Michael Shuler <michael@pbandjelly.org>  Thu, 11 Jun 2020 08:38:00 -0500
+  Note: due to bug #743339, CA certificates added back in this version
+  won't automatically be trusted again on upgrade.  Affected users may
+  need to reconfigure the package to restore the desired state.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 28 Jan 2021 13:01:43 +0100
 
 ca-certificates (20200601~deb10u1) buster; urgency=medium
 

@@ -1,9 +1,7 @@
 Source: ca-certificates
 Section: misc
 Priority: optional
-Maintainer: Michael Shuler <michael@pbandjelly.org>
-Uploaders: Raphael Geissert <geissert@debian.org>,
-           Thijs Kinkhorst <thijs@debian.org>
+Maintainer: Julien Cristau <jcristau@debian.org>
 Build-Depends: debhelper-compat (= 12), po-debconf
 Build-Depends-Indep: python, openssl
 Standards-Version: 4.3.0.1
