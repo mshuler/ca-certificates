@@ -3,9 +3,12 @@
 #
 #
 
+SBINDIR = /usr/sbin
+
 all:
 
 clean:
 
 install:
-	install -m755 update-ca-certificates $(DESTDIR)/usr/sbin/
+	install -d $(DESTDIR)$(SBINDIR)
+	install -m755 update-ca-certificates $(DESTDIR)$(SBINDIR)/
