@@ -30,6 +30,7 @@ ca-certificates (20211004) UNRELEASED; urgency=low
     - "Trustis FPS Root CA"
     - "Staat der Nederlanden Root CA - G3"
   * Blacklist expired root certificate "DST Root CA X3" (closes: #995432)
+  * mozilla/certdata2pem.py: print a warning for expired certificates.
 
  -- Debian Janitor <janitor@jelmer.uk>  Thu, 11 Jun 2020 14:29:08 -0000
 

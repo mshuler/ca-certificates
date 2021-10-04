@@ -21,11 +21,15 @@
 # USA.
 
 import base64
+import datetime
 import os.path
 import re
 import sys
 import textwrap
 import io
+
+from cryptography import x509
+
 
 objects = []
 
@@ -117,6 +121,13 @@ for obj in objects:
     if obj['CKA_CLASS'] == 'CKO_CERTIFICATE':
         if not obj['CKA_LABEL'] in trust or not trust[obj['CKA_LABEL']]:
             continue
+
+        cert = x509.load_der_x509_certificate(obj['CKA_VALUE'])
+        if cert.not_valid_after < datetime.datetime.now():
+            print('!'*74)
+            print('Trusted but expired certificate found: %s' % obj['CKA_LABEL'])
+            print('!'*74)
+
         bname = obj['CKA_LABEL'][1:-1].replace('/', '_')\
                                       .replace(' ', '_')\
                                       .replace('(', '=')\
