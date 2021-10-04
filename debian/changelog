@@ -29,6 +29,7 @@ ca-certificates (20211004) UNRELEASED; urgency=low
     - "Global Chambersign Root - 2008"
     - "Trustis FPS Root CA"
     - "Staat der Nederlanden Root CA - G3"
+  * Blacklist expired root certificate "DST Root CA X3" (closes: #995432)
 
  -- Debian Janitor <janitor@jelmer.uk>  Thu, 11 Jun 2020 14:29:08 -0000
 

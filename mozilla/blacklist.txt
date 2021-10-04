@@ -7,3 +7,6 @@
 "MITM subCA 2 issued by Trustwave"
 "TURKTRUST Mis-issued Intermediate CA 1"
 "TURKTRUST Mis-issued Intermediate CA 2"
+
+# Expired CA (#995432)
+"DST Root CA X3"
